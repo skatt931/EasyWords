@@ -7,6 +7,7 @@ import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 import { RouterModule, Routes } from '@angular/router';
+import { MatToolbarModule } from '@angular/material';
 
 const routes: Routes = [
   { path: 'create', component: CreateComponent },
@@ -25,7 +26,8 @@ const routes: Routes = [
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    RouterModule.forRoot(routes)
+    RouterModule.forRoot(routes),
+    MatToolbarModule
   ],
   providers: [
   ],
