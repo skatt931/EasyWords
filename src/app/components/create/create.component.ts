@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DataSendService } from '../../services/data-send.service';
 
 @Component({
   selector: 'app-create',
@@ -7,9 +8,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class CreateComponent implements OnInit {
 
-  constructor() { }
+  constructor(public test: DataSendService) { }
 
   ngOnInit() {
+  }
+
+  addTestData() {
+    this.test.putData().subscribe(x => console.log(x));
   }
 
 }

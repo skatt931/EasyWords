@@ -1,0 +1,14 @@
+.main-image-block {
+  position: relative;
+}
+.main-picture {
+  position: absolute;
+  height: 1000px;
+  width: 100%;
+  filter: opacity(30%) blur(2px);
+}
+.primery-text {
+  position: absolute;
+  text-align: center;
+  margin-top: 600px;
+}

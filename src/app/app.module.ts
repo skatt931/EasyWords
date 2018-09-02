@@ -8,12 +8,26 @@ import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 import { RouterModule, Routes } from '@angular/router';
 import { MatToolbarModule } from '@angular/material';
+import { DataSendService } from './services/data-send.service';
+import { HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
+import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
+import { registerLocaleData } from '@angular/common';
+import en from '@angular/common/locales/en';
+import { MainPageComponent } from './components/main-page/main-page.component';
+
+
+
+registerLocaleData(en);
+
+
 
 const routes: Routes = [
+  { path: 'main_page', component: MainPageComponent },
   { path: 'create', component: CreateComponent },
   { path: 'edit/:id', component: EditComponent },
   { path: 'list', component: ListComponent },
-  { path: '', redirectTo: '/list', pathMatch: 'full'}
+  { path: '', redirectTo: '/main_page', pathMatch: 'full'}
 ];
 
 @NgModule({
@@ -22,14 +36,20 @@ const routes: Routes = [
     ListComponent,
     CreateComponent,
     EditComponent,
+    MainPageComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     RouterModule.forRoot(routes),
-    MatToolbarModule
+    MatToolbarModule,
+    HttpClientModule,
+    FormsModule,
+    NgZorroAntdModule,
   ],
   providers: [
+    DataSendService,
+    { provide: NZ_I18N, useValue: en_US }
   ],
   bootstrap: [AppComponent]
 })
