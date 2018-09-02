@@ -15,6 +15,7 @@ import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
 import { registerLocaleData } from '@angular/common';
 import en from '@angular/common/locales/en';
 import { MainPageComponent } from './components/main-page/main-page.component';
+import { MainPageService } from './services/main-page-data.service';
 
 
 
@@ -49,7 +50,8 @@ const routes: Routes = [
   ],
   providers: [
     DataSendService,
-    { provide: NZ_I18N, useValue: en_US }
+    { provide: NZ_I18N, useValue: en_US },
+    MainPageService
   ],
   bootstrap: [AppComponent]
 })

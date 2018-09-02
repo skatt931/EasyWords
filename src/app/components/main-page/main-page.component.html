@@ -2,8 +2,8 @@
   <nz-content>
       <div nz-row>
         <div nz-col nzSpan="24">
-            <ul nz-menu [nzMode]="'horizontal'" style="line-height: 64px;">
-                <li nz-menu-item>nav 1</li>
+            <ul nz-menu [nzMode]="'horizontal'" style="line-height: 64px;" >
+                <li *ngFor="let button of navigationButtons" nz-menu-item >{{ button.btnName }}</li>
               </ul>
               <div class="main-image-block">
                 <img class="main-picture" src="../../../assets/images/main/main_picture.jpg" alt="main picture">
