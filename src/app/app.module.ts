@@ -7,28 +7,21 @@ import { ListComponent } from './components/list/list.component';
 import { CreateComponent } from './components/create/create.component';
 import { EditComponent } from './components/edit/edit.component';
 import { RouterModule, Routes } from '@angular/router';
-import { MatToolbarModule } from '@angular/material';
+import { MatToolbarModule, MatButtonModule, MatSidenavModule, MatIconModule, MatListModule } from '@angular/material';
 import { DataSendService } from './services/data-send.service';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-import { NgZorroAntdModule, NZ_I18N, en_US } from 'ng-zorro-antd';
-import { registerLocaleData } from '@angular/common';
-import en from '@angular/common/locales/en';
 import { MainPageComponent } from './components/main-page/main-page.component';
 import { MainPageService } from './services/main-page-data.service';
-
-
-
-registerLocaleData(en);
-
-
+import { LayoutModule } from '@angular/cdk/layout';
+import { TopMenuComponent } from './components/top-menu/top-menu.component';
 
 const routes: Routes = [
   { path: 'main_page', component: MainPageComponent },
   { path: 'create', component: CreateComponent },
   { path: 'edit/:id', component: EditComponent },
   { path: 'list', component: ListComponent },
-  { path: '', redirectTo: '/main_page', pathMatch: 'full'}
+  { path: '', redirectTo: '/main_page', pathMatch: 'full' }
 ];
 
 @NgModule({
@@ -37,7 +30,8 @@ const routes: Routes = [
     ListComponent,
     CreateComponent,
     EditComponent,
-    MainPageComponent
+    MainPageComponent,
+    TopMenuComponent
   ],
   imports: [
     BrowserModule,
@@ -46,11 +40,15 @@ const routes: Routes = [
     MatToolbarModule,
     HttpClientModule,
     FormsModule,
-    NgZorroAntdModule,
+    LayoutModule,
+    MatButtonModule,
+    MatSidenavModule,
+    MatIconModule,
+    MatListModule
+
   ],
   providers: [
     DataSendService,
-    { provide: NZ_I18N, useValue: en_US },
     MainPageService
   ],
   bootstrap: [AppComponent]

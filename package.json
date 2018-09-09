@@ -11,7 +11,7 @@
   },
   "private": true,
   "dependencies": {
-    "@angular/animations": "^6.1.6",
+    "@angular/animations": "^6.1.7",
     "@angular/cdk": "^6.4.7",
     "@angular/common": "^6.1.6",
     "@angular/compiler": "^6.1.6",
@@ -29,8 +29,6 @@
     "less": "^2.7.3",
     "loader.js": "^4.7.0",
     "mongoose": "^5.2.10",
-    "ng-semantic": "^1.1.13",
-    "ng-zorro-antd": "^1.4.0",
     "rxjs": "^6.3.0",
     "zone.js": "~0.8.26"
   },

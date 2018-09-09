@@ -6,7 +6,7 @@ const bodyParser = require('body-parser');
 const mongoose = require('mongoose');
 
 const issues = require('./routes/issues');
-const navigationButtons = require('./routes/navigationButtons');
+const mainMenu = require('./routes/mainMenu');
 
 const app = express();
 const router = express.Router();
@@ -26,7 +26,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/user', express.static(path.join(__dirname, 'public')));
 
 app.use('/issues', issues);
-app.use('/navigationbuttons', navigationButtons);
+app.use('/mainmenu', mainMenu);
 
 app.use('/', router);
 

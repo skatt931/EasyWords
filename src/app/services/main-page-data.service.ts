@@ -11,6 +11,9 @@ export class MainPageService {
   constructor(private http: HttpClient) { }
 
   getNavigationButtons() {
-    return this.http.get(environment.apiurl + '/navigationbuttons');
+    return this.http.get(environment.apiurl + '/mainmenu/navigationbuttons');
+  }
+  getMainText() {
+    return this.http.get(environment.apiurl + '/mainmenu/maintext');
   }
 }
